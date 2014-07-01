@@ -1,0 +1,11 @@
+#!/bin/sh
+
+MONO_VERSION=3.4.0
+
+cat <<EOF
+---
+config_vars:
+PATH: /app/mono-${MONO_VERSION}/bin:/usr/local/bin:/usr/bin:/bin
+default_process_types:
+web: /app/xsp/bin/xsp4 --nonstop --port \$PORT --root "$WEB_ROOT"
+EOF
